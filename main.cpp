@@ -19,6 +19,11 @@ const int LOADCELL_DOUT_PIN = 21;
 const int LOADCELL_SCK_PIN = 22;
 
 HX711 scale;
+int filt_out = 0;
+float A = .5;
+float B = 1-A;
+float raw_read = 0.0;
+
 
 void setup()
 {
@@ -77,12 +82,15 @@ void setup()
  */
 void loop()
 {
+  raw_read = scale.get_units();
+  filt_out = A*filt_out + B*raw_read;
+
   Serial.print("one reading:\t");
-  Serial.print(scale.get_units(), 1);
+  Serial.print(filt_out, 1);
   Serial.print("\t| average:\t");
   Serial.println(scale.get_units(10), 1);
 
   scale.power_down(); // put the ADC in sleep mode
-  delay(250);
+  vTaskDelay(10);
   scale.power_up();
 }

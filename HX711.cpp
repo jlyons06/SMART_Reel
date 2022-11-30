@@ -196,7 +196,7 @@ void HX711::wait_ready(unsigned long delay_ms) {
 	while (!is_ready()) {
 		// Probably will do no harm on AVR but will feed the Watchdog Timer (WDT) on ESP.
 		// https://github.com/bogde/HX711/issues/73
-		delay(delay_ms);
+		delay(10);
 	}
 }
 
@@ -209,7 +209,7 @@ bool HX711::wait_ready_retry(int retries, unsigned long delay_ms) {
 		if (is_ready()) {
 			return true;
 		}
-		delay(delay_ms);
+		delay(10);
 		count++;
 	}
 	return false;
@@ -234,7 +234,7 @@ long HX711::read_average(byte times) {
 		sum += read();
 		// Probably will do no harm on AVR but will feed the Watchdog Timer (WDT) on ESP.
 		// https://github.com/bogde/HX711/issues/73
-		delay(0);
+		//delay(0);
 	}
 	return sum / times;
 }
