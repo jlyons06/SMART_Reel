@@ -8,10 +8,17 @@
  *  @copyright 2022 by the authors, released under the MIT License.
  */
 
+#ifndef task_webserver_h
+#define task_webserver_h
+#include <Arduino.h>
+#include <PrintStream.h>
+#include <WiFi.h>
+#include <WebServer.h>
+
 
 void setup_wifi(void);
 
-void HTML_header();
+void HTML_header(String &a_string, const char *page_title);
 
 void handle_DocumentRoot();
 
@@ -27,4 +34,4 @@ void handle_Top_Water_Bait(void);
 
 void task_webserver(void *p_params);
 
-//String &a_string, const char *page_title
+#endif
