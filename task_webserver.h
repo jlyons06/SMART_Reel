@@ -25,6 +25,6 @@ void handle_Crawdad_Bait(void);
 
 void handle_Top_Water_Bait(void);
 
-void task_webserver(void);
+void task_webserver(void *p_params);
 
 //String &a_string, const char *page_title
