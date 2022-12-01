@@ -52,7 +52,6 @@ const uint8_t crawdadPin = 36;
 /// The pin to read the worm flag
 const uint8_t wormPin = 39;
 
-#define FAST_PIN 12 ///< The GPIO pin cranking out a 500 Hz square wave
 
 /** @brief   The web server object for this project.
  *  @details This server is responsible for responding to HTTP requests from
@@ -137,7 +136,6 @@ void handle_DocumentRoot()
     a_str += "<p><p> <a href=\"/minnow_bait\">Minnow Bait</a>\n";
     a_str += "<p><p> <a href=\"/crawdad_bait\">Crawdad Bait</a>\n";
     a_str += "<p><p> <a href=\"/top_water_bait\">Top Water Bait</a>\n";
-    // a_str += "<p><p> <a href=\"/csv\">Show some data in CSV format</a>\n";
     a_str += "</div>\n</body>\n</html>\n";
 
     server.send(200, "text/html", a_str);
@@ -187,11 +185,9 @@ void handle_Minnow_Bait(void)
     // This variable must be declared static so that its value isn't forgotten
     // each time this function runs.
     // Share<bool> minnow_flag (false);
-    // minnow_flag.put(true);
-    static bool state = false;
-
-    digitalWrite(minnowPin, state);
-    state = !state;
+    minnow_flag.put(true);
+    // static bool state = false;
+    // state = !state;
 
     String minnow_page = "<!DOCTYPE html> <html> <head>\n";
     minnow_page += "<meta http-equiv=\"refresh\" content=\"1; url='/'\" />\n";
@@ -212,11 +208,9 @@ void handle_Crawdad_Bait(void)
 {
     // This variable must be declared static so that its value isn't forgotten
     // each time this function runs.
-    // crawdad_flag.put(true);
-    static bool state = false;
-
-    digitalWrite(crawdadPin, state);
-    state = !state;
+    crawdad_flag.put(true);
+    // static bool state = false;
+    // state = !state;
 
     String crawdad_page = "<!DOCTYPE html> <html> <head>\n";
     crawdad_page += "<meta http-equiv=\"refresh\" content=\"1; url='/'\" />\n";
@@ -237,11 +231,9 @@ void handle_Top_Water_Bait(void)
 {
     // This variable must be declared static so that its value isn't forgotten
     // each time this function runs.
-    // topwater_flag.put(true);
-    static bool state = false;
-
-    digitalWrite(wormPin, state);
-    state = !state;
+    topwater_flag.put(true);
+    // static bool state = false;
+    // state = !state;
 
     String topwater_page = "<!DOCTYPE html> <html> <head>\n";
     topwater_page += "<meta http-equiv=\"refresh\" content=\"1; url='/'\" />\n";
@@ -251,30 +243,6 @@ void handle_Top_Water_Bait(void)
     server.send(200, "text/html", topwater_page);
 }
 
-// /** @brief   Show some simulated data when asked by the web server.
-//  *  @details The contrived data is sent in a relatively efficient Comma
-//  *           Separated Variable (CSV) format which is easily read by Matlab(tm)
-//  *           and Python and spreadsheets.
-//  */
-// void handle_CSV (void)
-// {
-//     // The page will be composed in an Arduino String object, then sent.
-//     // The first line will be column headers so we know what the data is
-//     String csv_str = "Time, Jumpiness\n";
-
-//     // Create some fake data and put it into a String object. We could just
-//     // as easily have taken values from a data array, if such an array existed
-//     for (uint8_t index = 0; index < 20; index++)
-//     {
-//         csv_str += index;
-//         csv_str += ",";
-//         csv_str += String (sin (index / 5.4321), 3);       // 3 decimal places
-//         csv_str += "\n";
-//     }
-
-//     // Send the CSV file as plain text so it can be easily saved as a file
-//     server.send (404, "text/plain", csv_str);
-// }
 
 /** @brief   Task which sets up and runs a web server.
  *  @details After setup, function @c handleClient() must be run periodically
@@ -293,7 +261,6 @@ void task_webserver(void *p_params)
     server.on("/minnow_bait", handle_Minnow_Bait);
     server.on("/crawdad_bait", handle_Crawdad_Bait);
     server.on("/top_water_bait", handle_Top_Water_Bait);
-    // server.on ("/csv", handle_CSV);
     server.onNotFound(handle_NotFound);
 
     // Get the web server running
@@ -306,68 +273,4 @@ void task_webserver(void *p_params)
         server.handleClient();
         vTaskDelay(500);
     }
-}
-
-/** @brief   Task which sends a high frequency signal to show it can run fast.
- *  @details This task sends a square wave signal with a frequency of 500 Hz
- *           and a duty cyle of 50%. Its purpose in the WiFi demonstration is
- *           to verify that a fast task can run at higher priority than the
- *           WiFi task and keep relatively accurate timing.
- *  @param   p_params An unused pointer to (no) parameters passed to this task
- */
-
-void task_fast(void *p_params)
-{
-    Serial << "Start Task Fast" << endl;
-
-    // Configures the pin as an output
-    pinMode(FAST_PIN, OUTPUT);
-
-    // Sets the delay for 1 ms
-    const TickType_t FAST_DELAY = 1;
-
-    while (true)
-    {
-        digitalWrite(FAST_PIN, HIGH);
-        vTaskDelay(FAST_DELAY);
-        digitalWrite(FAST_PIN, LOW);
-        vTaskDelay(FAST_DELAY);
-    }
-}
-
-/** @brief   Arduino setup method which initializes the communication ports and
- *           gets the task(s) running.
- */
-void setup()
-{
-    Serial.begin(115200);
-    delay(100);
-    while (!Serial)
-    {
-    } // Wait for serial port to be working
-    delay(1000);
-    Serial << endl
-           << F("\033[2JTesting Arduino Web Server") << endl;
-
-    // Call function which gets the WiFi working
-    setup_wifi();
-
-    // Set up the pin for the blue LED on the ESP32 board
-    pinMode(ledPin, OUTPUT);
-    digitalWrite(ledPin, LOW);
-
-    // Create the tasks which will do exciting things...
-
-    // Task which runs the web server. It runs at a low priority
-    xTaskCreate(task_webserver, "Web Server", 8192, NULL, 2, NULL);
-
-    // Task which produces a square wave (again) at a high priority
-    xTaskCreate(task_fast, "500 Hz", 1024, NULL, 5, NULL);
-}
-
-/** @brief   Arduino loop method which runs repeatedly, doing nothing much.
- */
-void loop()
-{
-    vTaskDelay(1000);
 }
