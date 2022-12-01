@@ -10,6 +10,7 @@
 #ifndef _SHARES_H_
 #define _SHARES_H_
 
+#include <Arduino.h>
 #include "taskshare.h"
 
 // A share which holds the flag to begin the pattern of the minnow bait
