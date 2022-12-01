@@ -1,96 +1,150 @@
-/** @file main.h
- *  Main code to operate and collect data from the SMART Reel.
- *  @author Joe Lyons
- *  @date 2022-Nov-17
- *  @copyright 2022 by the authors
+/** @file Clapp.cpp
+ *  This file contains code relating to HW4, tasks to debounce a button
  */
 
-#include <HX711.h>
-#include <IMU_R.h>
+#include <Arduino.h>
+#include "PrintStream.h"
+#include "IMU_R.h"
+#include "encoder.h"
+#include "HX711.h"
+#include "Motor.h"
+#include "WiFi.h"
+#include "WebServer.h"
 
-/** @brief   Code to collect data from strain gauges via HX711.
- *  @details The following code is used to collect and display data from
- *           the two strain gauges of the SMART Reel via the HX711 load
- *           cell amplifier.
+
+
+/** @brief   Task preforms debouncing of a button
+ *  @details This task ensures that when a button is pressed that there is no 
+ *           issue where the button bounces from high to low before settling to the correct value
+ *  @param   p_params A pointer to parameters passed to this task. This 
+ *           pointer is ignored; it should be set to @c NULL in the 
+ *           call to @c xTaskCreate() which starts this task
  */
+//#define Button 13               //  USES GIOPXX NOT REGULAR PIN NUMBER
+#define FAST_PIN 12               //  USES GIOPXX NOT REGULAR PIN NUMBER
 
-// HX711 circuit wiring
-const int LOADCELL_DOUT_PIN = 21;
-const int LOADCELL_SCK_PIN = 22;
-
-HX711 scale;
-int filt_out = 0;
-float A = .5;
-float B = 1-A;
-float raw_read = 0.0;
-
-
-void setup()
+void task_IMU (void* p_params)
 {
-  Serial.begin(115200);
-  Serial.println("HX711 Demo");
-
-  Serial.println("Initializing the scale");
-
-  // Initialize library with data output pin, clock input pin and gain factor.
-  // Channel selection is made by passing the appropriate gain:
-  // - With a gain factor of 64 or 128, channel A is selected
-  // - With a gain factor of 32, channel B is selected
-  // By omitting the gain factor parameter, the library
-  // default "128" (Channel A) is used here.
-  scale.begin(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN);
-
-  Serial.println("Before setting up the scale:");
-  Serial.print("read: \t\t");
-  Serial.println(scale.read()); // print a raw reading from the ADC
-
-  Serial.print("read average: \t\t");
-  Serial.println(scale.read_average(20)); // print the average of 20 readings from the ADC
-
-  Serial.print("get value: \t\t");
-  Serial.println(scale.get_value(5)); // print the average of 5 readings from the ADC minus the tare weight (not set yet)
-
-  Serial.print("get units: \t\t");
-  Serial.println(scale.get_units(5), 1); // print the average of 5 readings from the ADC minus tare weight (not set) divided
-                                         // by the SCALE parameter (not set yet)
-
-  //scale.set_scale(2280.f); // this value is obtained by calibrating the scale with known weights; see the README for details
-  scale.tare();            // reset the scale to 0
-
-  Serial.println("After setting up the scale:");
-
-  Serial.print("read: \t\t");
-  Serial.println(scale.read()); // print a raw reading from the ADC
-
-  Serial.print("read average: \t\t");
-  Serial.println(scale.read_average(20)); // print the average of 20 readings from the ADC
-
-  Serial.print("get value: \t\t");
-  Serial.println(scale.get_value(5)); // print the average of 5 readings from the ADC minus the tare weight, set with tare()
-
-  Serial.print("get units: \t\t");
-  Serial.println(scale.get_units(5), 1); // print the average of 5 readings from the ADC minus tare weight, divided
-                                         // by the SCALE parameter set with set_scale
-
-  Serial.println("Readings:");
+    Serial << "Creating IMU"<< endl;
+    while (true)
+    {
+    //IMU_get_data();            // runs the IMU_Get_Data function to retrieve accel and gryo data from IMU
+    vTaskDelay(200000);
+    }
 }
 
 
-/** @brief   The Arduino loop function used to repeat collection of data.
- *  @details This loop function is used to cycle printing of strain gauge
- *           measurements through the HX711. 
+/** @brief   Task which creates a motor control task.
+ *  @details This task creates a square wave at 500Hz and 50% duty on GPIO 12
+ *  @param   p_params An unused pointer to (no) parameters passed to this task
  */
-void loop()
+void task_Motor (void* p_params)
 {
-  raw_read = scale.get_units();
-  filt_out = A*filt_out + B*raw_read;
+    Serial << "Creating Motor"<< endl;
+    Motor Motor1;
+    while (true)
+    {
+    // //Minnow
+    // Motor1.SetSpeed(85);
+    // vTaskDelay(10000);
+    // Motor1.SetSpeed(0);
+    // vTaskDelay(10000);
 
-  Serial.print("one reading:\t");
-  Serial.print(filt_out, 1);
-  Serial.print("\t| average:\t");
-  Serial.println(scale.get_units(10), 1);
+    // //Crawdad
+    // Motor1.SetSpeed(190);  
+    // vTaskDelay(500);
+    // Motor1.SetSpeed(0); 
+    // vTaskDelay(3000);
+    // Motor1.SetSpeed(125);  
+    // vTaskDelay(700);
+    // Motor1.SetSpeed(0); 
+    // vTaskDelay(1000);
 
-  scale.power_down(); // put the ADC in sleep mode
-  vTaskDelay(10);
-  scale.power_up();
+    // SwimBait
+    // Motor1.SetSpeed(255);
+    // vTaskDelay(10);
+    // Motor1.SetSpeed(220);
+    // vTaskDelay(150);
+    // Motor1.SetSpeed(100);
+    // vTaskDelay(1500);
+    // Motor1.SetSpeed(180);
+    // vTaskDelay(250);
+
+    }
 }
+void task_Encoder (void* p_params)
+{
+    Serial << "Creating Encoder"<< endl;
+    encoder enc1(34,35);
+    //enc1.reset();
+    while (true)
+    {
+        //enc1.measure();
+        vTaskDelay(100000);
+    }
+}
+void task_Strain (void* p_params)
+{
+    Serial << "Creating Strain"<< endl;
+    uint16_t LOADCELL_DOUT_PIN = 21 ;
+    uint16_t LOADCELL_SCK_PIN  = 22 ;
+    
+
+    HX711 Strain;
+    Strain.begin(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN,1);
+    Strain.set_scale(1.f); // this value is obtained by calibrating the scale with known weights; see the README for details
+    Strain.tare();            // reset the scale to 0
+    uint16_t Reading1 =0;
+    uint16_t Reading2 =0;
+    uint16_t Reading3 =0;
+    while(true)
+    {
+    
+   
+    Serial.print("one reading:\t");
+    Serial.println(Strain.get_units(), 1);
+
+
+    // Strain.power_down(); // put the ADC in sleep mode  
+    // vTaskDelay(10);
+    // Strain.power_up();
+    vTaskDelay(10);
+    }
+}
+
+
+/** @brief   The Arduino setup function.
+ *  @details This function is used to set up the microcontroller by starting
+ *           the serial port, saying hello, and creating the tasks.
+ */
+void setup (void) 
+{
+    // The serial port must begin before it may be used
+    Serial.begin (115200);
+    while (!Serial) 
+    {
+    }
+    Serial << "Serial Connected" << endl;
+    
+    // Create the task which prints dashes. The stack size should be large
+    // enough to prevent the program from crashing no matter what the inputs
+    xTaskCreate (task_IMU, "IMU", 4096, NULL, 3, NULL);
+    xTaskCreate (task_Motor, "Fast", 2048, NULL, 5, NULL);
+    xTaskCreate (task_Encoder, "Fast", 2048, NULL, 2, NULL);
+    xTaskCreate (task_Strain, "Fast", 2048, NULL, 6, NULL);
+    IMU_setup();
+}
+
+
+/** @brief   The Arduino loop function.
+ *  @details This function is called periodically by the Arduino system. It
+ *           runs as a low priority task. On some microcontrollers it will
+ *           crash when FreeRTOS is running, so we usually don't use this
+ *           function for anything, instead just having it delay itself. 
+ */
+void loop (void)
+{
+    // Delay for a whole minute, which is an eternity to a microcontroller
+    vTaskDelay (60000);
+}
+
