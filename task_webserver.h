@@ -14,6 +14,7 @@
 #include <PrintStream.h>
 #include <WiFi.h>
 #include <WebServer.h>
+#include <shares.h>
 
 
 void setup_wifi(void);
