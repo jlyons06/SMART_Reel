@@ -274,38 +274,3 @@ void task_webserver(void *p_params)
         vTaskDelay(500);
     }
 }
-
-
-/** @brief   Arduino setup method which initializes the communication ports and
- *           gets the task(s) running.
- */
-void setup()
-{
-    Serial.begin(115200);
-    delay(100);
-    while (!Serial)
-    {
-    } // Wait for serial port to be working
-    delay(1000);
-    Serial << endl
-           << F("\033[2JTesting Arduino Web Server") << endl;
-
-    // Call function which gets the WiFi working
-    setup_wifi();
-
-    // Set up the pin for the blue LED on the ESP32 board
-    pinMode(ledPin, OUTPUT);
-    digitalWrite(ledPin, LOW);
-
-    // Create the tasks which will do exciting things...
-
-    // Task which runs the web server. It runs at a low priority
-    xTaskCreate(task_webserver, "Web Server", 8192, NULL, 2, NULL);
-}
-
-/** @brief   Arduino loop method which runs repeatedly, doing nothing much.
- */
-void loop()
-{
-    vTaskDelay(1000);
-}
