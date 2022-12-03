@@ -22,7 +22,7 @@ as well as the current draw from the motor. These are effective means of determi
 The SMART fishing reel designed in this project will be able to automatically reel in differnet bait patterns
 
 ### Bill of Materials and Estimated Cost
-<center>
+
 | Qty. | Part                      | Source                | Est. Cost |
 |:----:|:--------------------------|:----------------------|:---------:|
 |  1   | Zebco Fishing Rod +Reel   | Amazon                |   $11.95  |
@@ -40,13 +40,13 @@ Additional Components Used
 |:----:|:--------------------------|:----------------------|:---------:|
 |  1   | MPU650 IMU Sensor         | Dr. Ridgley           |     -     |
 |  1   | HX711 Breakout Board      | Amazon                |   $10.59  |
-|  1   | DRV8876 Breakout Board    | Pololu                |   $6.95   | </center>
+|  1   | DRV8876 Breakout Board    | Pololu                |   $6.95   |
 
 
 ### Sketch of Mechanical Design 
 
 ![Sketch of Mechanical System](https://github.com/jlyons06/SMART_Reel/blob/437eeac43a9c9140996a29065c9eb7d16c187148/Initial%20Drawing.png)
-Initial Sketch of Mechanical System
+<center> Initial Sketch of Mechanical System </center>
 
 The idea behind this mechanical system was to allow for the user to manually reel in if they desire, while still having the capability 
 to reel in using the DC motor. We utilized a gear train of 3 gears in order to keep the gear ratio between the motor and reel as close to 1:1 as possible.
