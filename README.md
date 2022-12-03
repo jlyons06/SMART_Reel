@@ -22,7 +22,7 @@ as well as the current draw from the motor. These are effective means of determi
 The SMART fishing reel designed in this project will be able to automatically reel in differnet bait patterns
 
 ### Bill of Materials and Estimated Cost
-| Qty. | Part                      | Source                | Est. Cost |
+<center>| Qty. | Part                      | Source                | Est. Cost |
 |:----:|:--------------------------|:----------------------|:---------:|
 |  1   | Zebco Fishing Rod +Reel   | Amazon                |   $11.95  |
 |  1   | ESP32 Feather Board       | EZSBC                 |   $11.95  |
@@ -39,7 +39,7 @@ Additional Components Used
 |:----:|:--------------------------|:----------------------|:---------:|
 |  1   | MPU650 IMU Sensor         | Dr. Ridgley           |     -     |
 |  1   | HX711 Breakout Board      | Amazon                |   $10.59  |
-|  1   | DRV8876 Breakout Board    | Pololu                |   $6.95   |
+|  1   | DRV8876 Breakout Board    | Pololu                |   $6.95   | </center>
 
 
 ### Sketch of Mechanical Design 
@@ -58,24 +58,24 @@ and contours that were not easily measurable. The way we overcame this was takin
 select the correct gears to fit in our design. Below is an image of this characteristic sketch we used. 
 
 ![Gear Fit Sketch](https://github.com/jlyons06/SMART_Reel/blob/c20623955b924674a5ff0d627aa1d01427db8c82/2DGearFit.png)
-Solidworks Sketch of our gear fit
+<center>Solidworks Sketch of our gear fit </center>
 
 
 Below is the full CAD model of our design. The leftmost gear is the gear that will be attached to the reel, the middle gear will be idle, and the right gear is the driven gear. 
 
 ![Final Design](https://github.com/jlyons06/SMART_Reel/blob/c20623955b924674a5ff0d627aa1d01427db8c82/FullCAD.png)
-Solidworks Model of our design
+<center> Solidworks Model of our design </center>
 
 Below is fully physical system. All custom parts were 3D printed. 
 ![Full System](https://github.com/jlyons06/SMART_Reel/blob/81e06ca9aa2a09d9bc581f14b7b454a0ffec9981/mech.png)
-Image of physical system
+<center> Image of physical system </center>
 
 ### PCB Design
 A large portion of this project was to design a custom PCB. The goal of this was to integrate all of the chips we plan on using [HX711 (Strain), DRV8876 (Motor Driver), LSM303 (Accelerometer), L3G4200D(Gyro)] into a single board. Below is an image of our PCB Design. 
 ![PCB Top](https://github.com/jlyons06/SMART_Reel/blob/98818e8a439611ab85505778bd46f60cab7026f7/SmartReelV1_top.png)
-Picture of the top of our PCB
+<center> Picture of the top of our PCB </center>
 ![PCB Bottom](https://github.com/jlyons06/SMART_Reel/blob/98818e8a439611ab85505778bd46f60cab7026f7/SmartReelV1_bottom.png)
-Picture of the bottom of our PCB
+<center> Picture of the bottom of our PCB </center>
 
 This primary iteration of our PCB had several issues. A few traces were routed to flash pins on the ESP32, which prevented code from uploading. This was fixed by cutting the traces to those pins and jumping them to the correct pins by soldering on wires. One more significant issue we had was the fact that something in our design fried our ESP32. We could not diagnose the problem and to prevent letting out the magic smoke on anymore of our ESP's, we resorted to using breakout boards. Fornately, after switching to breakout boards, we were able to get all of our electronics up and running. 
 
@@ -93,7 +93,7 @@ Documentation:      [LINK] <br>
 
 ### System Performance
 
-<img src= "https://github.com/jlyons06/SMART_Reel/blob/81e06ca9aa2a09d9bc581f14b7b454a0ffec9981/RunningSystem.gif" alt=System Running>
+<center> <img src= "https://github.com/jlyons06/SMART_Reel/blob/81e06ca9aa2a09d9bc581f14b7b454a0ffec9981/RunningSystem.gif" alt=System Running> </center>
 
 
 ### Future System Modifications 
