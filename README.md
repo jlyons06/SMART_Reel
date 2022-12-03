@@ -51,3 +51,11 @@ The idea behind this mechanical system was to allow for the user to manually ree
 to reel in using the DC motor. We utilized a gear train of 3 gears in order to keep the gear ratio between the motor and reel as close to 1:1 as possible.
 This is becuase when we initially speced the motor, we planned to have it interface directly with the handle and chose to move to a geared system later. All custom 
 parts such as gears and mounting fixtures will be 3D printed in PLA.
+
+### Final Design and CAD Model
+![Final Design](https://github.com/jlyons06/SMART_Reel/blob/437eeac43a9c9140996a29065c9eb7d16c187148/Initial%20Drawing.png)
+Solidworks Model of our design
+
+The CAD model for this project had one main hurdle; the fishing reel CAD model was not readily available online and was very difficult to reproduce due to some organic shapes 
+and contours that were not easily measurable. The way we overcame this was taking key measurements to characterize the design using the center of the handle as the orgin for our model. Once we got these measurements, We created a 2D sketch from the center of the handle with refrence to the edge of the fishing rod. This allowed us to easily use the Solidworks gear toolbox to
+select the correct gears to fit in our design. 
