@@ -67,4 +67,8 @@ Below is the full CAD model of our design. The leftmost gear is the gear that wi
 Solidworks Model of our design
 
 ### PCB Design
-A large portion of this project was to design a custom PCB. The goal of this was to integrate all of the chips we plan on using [HX711 (Strain), DRV8876 (Motor Driver), LSM303 (Accelerometer), L3G4200D(Gyro)]
+A large portion of this project was to design a custom PCB. The goal of this was to integrate all of the chips we plan on using [HX711 (Strain), DRV8876 (Motor Driver), LSM303 (Accelerometer), L3G4200D(Gyro)] into a single board. Below is an image of our PCB Design. 
+![PCB Top](https://github.com/jlyons06/SMART_Reel/blob/98818e8a439611ab85505778bd46f60cab7026f7/SmartReelV1_top.png)
+Picture of the top of our PCB
+![PCB Bottom](https://github.com/jlyons06/SMART_Reel/blob/98818e8a439611ab85505778bd46f60cab7026f7/SmartReelV1_bottom.png)
+Picture of the bottom of our PCB
