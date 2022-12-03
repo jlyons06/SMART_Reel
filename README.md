@@ -66,6 +66,10 @@ Below is the full CAD model of our design. The leftmost gear is the gear that wi
 ![Final Design](https://github.com/jlyons06/SMART_Reel/blob/c20623955b924674a5ff0d627aa1d01427db8c82/FullCAD.png)
 Solidworks Model of our design
 
+Below is fully physical system. All custom parts were 3D printed. 
+![Full System](https://github.com/jlyons06/SMART_Reel/blob/81e06ca9aa2a09d9bc581f14b7b454a0ffec9981/mech.png)
+Image of physical system
+
 ### PCB Design
 A large portion of this project was to design a custom PCB. The goal of this was to integrate all of the chips we plan on using [HX711 (Strain), DRV8876 (Motor Driver), LSM303 (Accelerometer), L3G4200D(Gyro)] into a single board. Below is an image of our PCB Design. 
 ![PCB Top](https://github.com/jlyons06/SMART_Reel/blob/98818e8a439611ab85505778bd46f60cab7026f7/SmartReelV1_top.png)
@@ -87,7 +91,8 @@ Full Source Code:   [LINK]
 Documentation:      [LINK] 
 
 ### System Performance
-See if you can imbed a video here
+!System Running](https://github.com/jlyons06/SMART_Reel/blob/81e06ca9aa2a09d9bc581f14b7b454a0ffec9981/RunningSystem.gif)
+System Running 
 
 ### Future System Modifications 
 Being on the quarter system, we were not able to accomplish everything we wanted to in 10 weeks. With more time, there is several modifications we could make to increase system performance and potentially make this a product that is desireable to people who want to fish but find the process of reeling/learning different bait patterns tedious. The first of these modifications would be to correct the mistakes on our PCB so that the electronics could be contained to a much cleaner package. 
