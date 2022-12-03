@@ -40,3 +40,9 @@ Additional Components Used
 |  1   | MPU650 IMU Sensor         | Dr. Ridgley           |     -     |
 |  1   | HX711 Breakout Board      | Amazon                |   $10.59  |
 |  1   | DRV8876 Breakout Board    | Pololu                |   $6.95   |
+
+
+### Sketch of Mechanical Design 
+
+! [Sketch of Mechanical System](https://github.com/jlyons06/SMART_Reel/blob/437eeac43a9c9140996a29065c9eb7d16c187148/Initial%20Drawing.png)
+Initial Sketch of Mechanical System
