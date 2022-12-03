@@ -43,15 +43,6 @@ IPAddress subnet(255, 255, 255, 0); // Network mask; just leave this as is
 /// The pin connected to an LED controlled through the Web interface
 const uint8_t ledPin = 2;
 
-/// The pin to read the minnow flag
-const uint8_t minnowPin = 19;
-
-/// The pin to read the crawdad flag
-const uint8_t crawdadPin = 36;
-
-/// The pin to read the worm flag
-const uint8_t wormPin = 39;
-
 
 /** @brief   The web server object for this project.
  *  @details This server is responsible for responding to HTTP requests from
