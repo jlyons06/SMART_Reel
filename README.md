@@ -53,9 +53,17 @@ This is becuase when we initially speced the motor, we planned to have it interf
 parts such as gears and mounting fixtures will be 3D printed in PLA.
 
 ### Final Design and CAD Model
-![Final Design](https://github.com/jlyons06/SMART_Reel/blob/437eeac43a9c9140996a29065c9eb7d16c187148/Initial%20Drawing.png)
-Solidworks Model of our design
+
 
 The CAD model for this project had one main hurdle; the fishing reel CAD model was not readily available online and was very difficult to reproduce due to some organic shapes 
 and contours that were not easily measurable. The way we overcame this was taking key measurements to characterize the design using the center of the handle as the orgin for our model. Once we got these measurements, We created a 2D sketch from the center of the handle with refrence to the edge of the fishing rod. This allowed us to easily use the Solidworks gear toolbox to
-select the correct gears to fit in our design. 
+select the correct gears to fit in our design. Below is an image of this characteristic sketch we used. 
+
+![Gear Fit Sketch](https://github.com/jlyons06/SMART_Reel/blob/c20623955b924674a5ff0d627aa1d01427db8c82/2DGearFit.png)
+Solidworks Sketch of our gear fit
+
+
+Below is the full CAD model of our design. The leftmost gear is the gear that will be attached to the reel, the middle gear will be idle, and the right gear is the driven gear. 
+
+![Final Design](https://github.com/jlyons06/SMART_Reel/blob/c20623955b924674a5ff0d627aa1d01427db8c82/FullCAD.png)
+Solidworks Model of our design
