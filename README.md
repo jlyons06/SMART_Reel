@@ -92,6 +92,7 @@ Documentation:      [LINK]
 
 ### System Performance
 !System Running](https://github.com/jlyons06/SMART_Reel/blob/81e06ca9aa2a09d9bc581f14b7b454a0ffec9981/RunningSystem.gif)
+<ing src= "https://github.com/jlyons06/SMART_Reel/blob/81e06ca9aa2a09d9bc581f14b7b454a0ffec9981/RunningSystem.gif" alt=System Running>
 System Running 
 
 ### Future System Modifications 
