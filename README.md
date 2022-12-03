@@ -46,7 +46,7 @@ Additional Components Used
 ### Sketch of Mechanical Design 
 
 ![Sketch of Mechanical System](https://github.com/jlyons06/SMART_Reel/blob/437eeac43a9c9140996a29065c9eb7d16c187148/Initial%20Drawing.png)
-<p style="text-align:center"> Initial Sketch of Mechanical System </p>
+Initial Sketch of Mechanical System 
 
 The idea behind this mechanical system was to allow for the user to manually reel in if they desire, while still having the capability 
 to reel in using the DC motor. We utilized a gear train of 3 gears in order to keep the gear ratio between the motor and reel as close to 1:1 as possible.
@@ -59,24 +59,24 @@ and contours that were not easily measurable. The way we overcame this was takin
 select the correct gears to fit in our design. Below is an image of this characteristic sketch we used. 
 
 ![Gear Fit Sketch](https://github.com/jlyons06/SMART_Reel/blob/c20623955b924674a5ff0d627aa1d01427db8c82/2DGearFit.png)
-<center>Solidworks Sketch of our gear fit </center>
+Solidworks Sketch of our gear fit
 
 
 Below is the full CAD model of our design. The leftmost gear is the gear that will be attached to the reel, the middle gear will be idle, and the right gear is the driven gear. 
 
 ![Final Design](https://github.com/jlyons06/SMART_Reel/blob/c20623955b924674a5ff0d627aa1d01427db8c82/FullCAD.png)
-<center> Solidworks Model of our design </center>
+ Solidworks Model of our design 
 
 Below is fully physical system. All custom parts were 3D printed. 
 ![Full System](https://github.com/jlyons06/SMART_Reel/blob/81e06ca9aa2a09d9bc581f14b7b454a0ffec9981/mech.png)
-<center> Image of physical system </center>
+Image of physical system 
 
 ### PCB Design
 A large portion of this project was to design a custom PCB. The goal of this was to integrate all of the chips we plan on using [HX711 (Strain), DRV8876 (Motor Driver), LSM303 (Accelerometer), L3G4200D(Gyro)] into a single board. Below is an image of our PCB Design. 
 ![PCB Top](https://github.com/jlyons06/SMART_Reel/blob/98818e8a439611ab85505778bd46f60cab7026f7/SmartReelV1_top.png)
-<center> Picture of the top of our PCB </center>
+Picture of the top of our PCB 
 ![PCB Bottom](https://github.com/jlyons06/SMART_Reel/blob/98818e8a439611ab85505778bd46f60cab7026f7/SmartReelV1_bottom.png)
-<center> Picture of the bottom of our PCB </center>
+Picture of the bottom of our PCB 
 
 This primary iteration of our PCB had several issues. A few traces were routed to flash pins on the ESP32, which prevented code from uploading. This was fixed by cutting the traces to those pins and jumping them to the correct pins by soldering on wires. One more significant issue we had was the fact that something in our design fried our ESP32. We could not diagnose the problem and to prevent letting out the magic smoke on anymore of our ESP's, we resorted to using breakout boards. Fornately, after switching to breakout boards, we were able to get all of our electronics up and running. 
 
@@ -93,8 +93,7 @@ Documentation:      [LINK] <br>
 
 
 ### System Performance
-
-<center> <img src= "https://github.com/jlyons06/SMART_Reel/blob/81e06ca9aa2a09d9bc581f14b7b454a0ffec9981/RunningSystem.gif" alt=System Running> </center>
+<img src= "https://github.com/jlyons06/SMART_Reel/blob/81e06ca9aa2a09d9bc581f14b7b454a0ffec9981/RunningSystem.gif" alt=System Running>
 
 
 ### Future System Modifications 
