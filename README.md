@@ -46,3 +46,8 @@ Additional Components Used
 
 ![Sketch of Mechanical System](https://github.com/jlyons06/SMART_Reel/blob/437eeac43a9c9140996a29065c9eb7d16c187148/Initial%20Drawing.png)
 Initial Sketch of Mechanical System
+
+The idea behind this mechanical system was to allow for the user to manually reel in if they desire, while still having the capability 
+to reel in using the DC motor. We utilized a gear train of 3 gears in order to keep the gear ratio between the motor and reel as close to 1:1 as possible.
+This is becuase when we initially speced the motor, we planned to have it interface directly with the handle and chose to move to a geared system later. All custom 
+parts such as gears and mounting fixtures will be 3D printed in PLA.
