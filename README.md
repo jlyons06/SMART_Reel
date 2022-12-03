@@ -89,11 +89,13 @@ PUT SOFTWARE STUFF HERE
 
 Full Source Code:   [LINK] 
 Documentation:      [LINK] 
+!System Running](https://github.com/jlyons06/SMART_Reel/blob/81e06ca9aa2a09d9bc581f14b7b454a0ffec9981/RunningSystem.gif)
+System Running 
 
 ### System Performance
-!System Running](https://github.com/jlyons06/SMART_Reel/blob/81e06ca9aa2a09d9bc581f14b7b454a0ffec9981/RunningSystem.gif)
-<ing src= "https://github.com/jlyons06/SMART_Reel/blob/81e06ca9aa2a09d9bc581f14b7b454a0ffec9981/RunningSystem.gif" alt=System Running>
-System Running 
+
+<img src= "https://github.com/jlyons06/SMART_Reel/blob/81e06ca9aa2a09d9bc581f14b7b454a0ffec9981/RunningSystem.gif" alt=System Running>
+
 
 ### Future System Modifications 
 Being on the quarter system, we were not able to accomplish everything we wanted to in 10 weeks. With more time, there is several modifications we could make to increase system performance and potentially make this a product that is desireable to people who want to fish but find the process of reeling/learning different bait patterns tedious. The first of these modifications would be to correct the mistakes on our PCB so that the electronics could be contained to a much cleaner package. 
