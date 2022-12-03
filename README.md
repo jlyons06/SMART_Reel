@@ -22,7 +22,8 @@ as well as the current draw from the motor. These are effective means of determi
 The SMART fishing reel designed in this project will be able to automatically reel in differnet bait patterns
 
 ### Bill of Materials and Estimated Cost
-<center>| Qty. | Part                      | Source                | Est. Cost |
+<center>
+| Qty. | Part                      | Source                | Est. Cost |
 |:----:|:--------------------------|:----------------------|:---------:|
 |  1   | Zebco Fishing Rod +Reel   | Amazon                |   $11.95  |
 |  1   | ESP32 Feather Board       | EZSBC                 |   $11.95  |
