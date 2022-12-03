@@ -72,3 +72,24 @@ A large portion of this project was to design a custom PCB. The goal of this was
 Picture of the top of our PCB
 ![PCB Bottom](https://github.com/jlyons06/SMART_Reel/blob/98818e8a439611ab85505778bd46f60cab7026f7/SmartReelV1_bottom.png)
 Picture of the bottom of our PCB
+
+This primary iteration of our PCB had several issues. A few traces were routed to flash pins on the ESP32, which prevented code from uploading. This was fixed by cutting the traces to those pins and jumping them to the correct pins by soldering on wires. One more significant issue we had was the fact that something in our design fried our ESP32. We could not diagnose the problem and to prevent letting out the magic smoke on anymore of our ESP's, we resorted to using breakout boards. Fornately, after switching to breakout boards, we were able to get all of our electronics up and running. 
+
+### Software Design Overview
+PUT SOFTWARE STUFF HERE
+-Task Diagram
+-Motor Task FSM
+-Webpage integration
+
+
+Full Source Code:   [LINK]
+Documentation:      [LINK]
+
+### System Performance
+See if you can imbed a video here
+
+### Future System Modifications 
+Being on the quarter system, we were not able to accomplish everything we wanted to in 10 weeks. With more time, there is several modifications we could make to increase system performance and potentially make this a product that is desireable to people who want to fish but find the process of reeling/learning different bait patterns tedious. The first of these modifications would be to correct the mistakes on our PCB so that the electronics could be contained to a much cleaner package. 
+In addition, we were able to collect IMU data, but we did not end up using the data for anything. We think it would be very interesting to take the IMU data and import it into a program like Matlab in order to create a visualization of how the rod angle is changing as the person reels. 
+Something else we would have like to add was the ability to use the encoder on the motor to record new bait patterns. This would be very interesting because with this functionality, the user would be able to create custom bait patterns if they desired. We would implement this by calculating the angular velocity input by the user, and saving how the angular velocity changes with time into an array so that we could feed these velocity values to our motor task to imitate the exact pattern the user inputed. 
+Overall, we were very happy with the performace of our system and feel that we achieved the majority of what we set out to do in the begining of the quarter. 
