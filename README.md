@@ -76,15 +76,15 @@ Picture of the bottom of our PCB
 This primary iteration of our PCB had several issues. A few traces were routed to flash pins on the ESP32, which prevented code from uploading. This was fixed by cutting the traces to those pins and jumping them to the correct pins by soldering on wires. One more significant issue we had was the fact that something in our design fried our ESP32. We could not diagnose the problem and to prevent letting out the magic smoke on anymore of our ESP's, we resorted to using breakout boards. Fornately, after switching to breakout boards, we were able to get all of our electronics up and running. 
 
 ### Software Design Overview
-PUT SOFTWARE STUFF HERE /n
--Task Diagram /n
--Talk about all the tasks /n
-    -Motor Task FSM /n 
--Webpage integration/n 
+PUT SOFTWARE STUFF HERE 
+-Task Diagram 
+-Talk about all the tasks 
+    -Motor Task FSM  
+-Webpage integration 
 
 
-Full Source Code:   [LINK] /n
-Documentation:      [LINK] /n
+Full Source Code:   [LINK] 
+Documentation:      [LINK] 
 
 ### System Performance
 See if you can imbed a video here
