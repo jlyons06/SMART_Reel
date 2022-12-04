@@ -95,6 +95,7 @@ Documentation:      [LINK] <br>
 
 ### System Performance
 We were able to sucessfully get our system working. To operate the SMART Reel, the user will connect to the ESP32's wifi on their smart phone, verify connection by selecting the "Fish On" button and ensuring the blue LED on the ESP32 turns on. Next, the user would cast their line. Then, the user will select the type of bait they are using by clicking the correct button on the user interface webpage. The SMART reel will then begin reeling in that bait pattern. The user should keep view of the ESP32 because if the blue LED turns on while the reeling is happening, the SMART Reel has determined that a fish could have taken the bait. This determination is made by checking to see if the strain in the rod has increased above a certain threshold (a bend/increase in strain is typically associated with increased tension on the line when a fish takes the bait)
+
 <img src= "https://github.com/jlyons06/SMART_Reel/blob/81e06ca9aa2a09d9bc581f14b7b454a0ffec9981/RunningSystem.gif" alt=System Running>
 
 
