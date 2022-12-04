@@ -1,4 +1,4 @@
-### SMART_Reel
+## SMART_Reel
 ME507 SMART_Reel Project Fall 2022
 This files contained in this repository are the software used in the implementation and control of 
 the SMART Fishing Reel designed and prototyped in ME507, at Cal Poly - SLO, in Fall 2022.
@@ -73,11 +73,11 @@ Image of physical system
 
 ### Electronics
 
-## Wiring Diagram
+#### Wiring Diagram
 ![Wiring Diagram](https://github.com/jlyons06/SMART_Reel/blob/ec3297f52a36d3cf54e479043f5b22853faf3d7b/ReportPics/WiringDG.png)
-Image of the wiring diagram of our systemS
+Image of the wiring diagram of our system
 
-## PCB Design
+#### PCB Design
 A large portion of this project was to design a custom PCB. The goal of this was to integrate all of the chips we plan on using [HX711 (Strain), DRV8876 (Motor Driver), LSM303 (Accelerometer), L3G4200D(Gyro)] into a single board. Below is an image of our PCB Design. 
 
 ![PCB Top](https://github.com/jlyons06/SMART_Reel/blob/98818e8a439611ab85505778bd46f60cab7026f7/SmartReelV1_top.png)
