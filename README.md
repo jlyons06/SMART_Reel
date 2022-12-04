@@ -71,8 +71,15 @@ Below is fully physical system. All custom parts were 3D printed.
 ![Full System](https://github.com/jlyons06/SMART_Reel/blob/81e06ca9aa2a09d9bc581f14b7b454a0ffec9981/mech.png)
 Image of physical system 
 
-### PCB Design
+### Electronics
+
+## Wiring Diagram
+![Wiring Diagram](https://github.com/jlyons06/SMART_Reel/blob/ec3297f52a36d3cf54e479043f5b22853faf3d7b/ReportPics/WiringDG.png)
+Image of the wiring diagram of our systemS
+
+## PCB Design
 A large portion of this project was to design a custom PCB. The goal of this was to integrate all of the chips we plan on using [HX711 (Strain), DRV8876 (Motor Driver), LSM303 (Accelerometer), L3G4200D(Gyro)] into a single board. Below is an image of our PCB Design. 
+
 ![PCB Top](https://github.com/jlyons06/SMART_Reel/blob/98818e8a439611ab85505778bd46f60cab7026f7/SmartReelV1_top.png)
 Picture of the top of our PCB 
 
@@ -81,14 +88,15 @@ Picture of the bottom of our PCB
 
 This primary iteration of our PCB had several issues. A few traces were routed to flash pins on the ESP32, which prevented code from uploading. This was fixed by cutting the traces to those pins and jumping them to the correct pins by soldering on wires. One more significant issue we had was the fact that something in our design fried our ESP32. We could not diagnose the problem and to prevent letting out the magic smoke on anymore of our ESP's, we resorted to using breakout boards. Fornately, after switching to breakout boards, we were able to get all of our electronics up and running. 
 
+ 
 ### Software Design Overview
 
 ![Task Diagram](https://github.com/jlyons06/SMART_Reel/blob/ec3297f52a36d3cf54e479043f5b22853faf3d7b/ReportPics/ActualTD.png)
 Image of our acutal Task Diagram  <br>
 
--Task Diagram <br>
 -Talk about all the tasks <br>
-    -Motor Task FSM  <br>
+    ![Task Motor FSM](https://github.com/jlyons06/SMART_Reel/blob/ec3297f52a36d3cf54e479043f5b22853faf3d7b/ReportPics/MotorFSM.png)
+Image of our task motor finite state machine (FSM)  <br>
 -Webpage integration <br>
 
 
