@@ -1,7 +1,9 @@
 /** @file IMU_R.h
- *  This helps print an array
- *  @author Nolan Clapp
- *  @date 2022-Oct-26 Original file by Clapp
+ *  @brief Headder file for IMU
+    @author Clapp
+    @author Schoeffler
+ *  @date 2017 Original Schoeffler 
+ *  @date 2022-11-01 Pulled code into .cpp and .h for easier use Clapp
  */
 
 #ifndef IMU_R_h
