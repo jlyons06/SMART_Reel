@@ -1,7 +1,9 @@
 /** @file IMU_R
  *  Prints an array of data
+ *  @author Michael Schoeffler 
  *  @author Nolan Clapp
- *  @date 2022-Oct-26 Original file by Clapp
+ *  @date 2017 Original Schoeffler 
+ *  @date 2022-11-01 Pulled code into .cpp and .h for easier use Clapp
  *  
  */
 
@@ -9,6 +11,7 @@
 #include <PrintStream.h>
 #include "IMU_R.h"
 // (c) Michael Schoeffler 2017, http://www.mschoeffler.de
+// https://mschoeffler.com/2017/10/05/tutorial-how-to-use-the-gy-521-module-mpu-6050-breakout-board-with-the-arduino-uno/
 
 #include "Wire.h" // This library allows you to communicate with I2C devices.
 
