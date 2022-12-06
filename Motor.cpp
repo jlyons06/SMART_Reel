@@ -1,5 +1,7 @@
-/** @file IMU_R
- *  Prints an array of data
+/** @file Motor.cpp
+ *  Creates a motor class to interface with a brushless DC motor
+ *  it works by seting motor pins as inputs and passing a PWM signal to 
+ *  one of the pins and sets teh other as high per the motor driver data sheet. 
  *  @author Nolan Clapp
  *  @date 2022-Oct-26 Original file by Clapp
  *  
@@ -12,6 +14,8 @@
 // (c) Michael Schoeffler 2017, http://www.mschoeffler.de
 
 #include "Wire.h" // This library allows you to communicate with I2C devices.
+/** @brief   Constructor which creates a motor object.
+ */
 Motor::Motor(void)
 {
   Motor::PIN_1=12;
@@ -20,7 +24,11 @@ Motor::Motor(void)
   pinMode(Motor::PIN_2, INPUT);
   
 }
-
+/** @brief   Method sets the motor speed (0-255)
+ *  @details This method sets the motor speed by passing in a PWM
+ *           signal and setting one motor pin to high
+ *  @params PWM The motor speed (0=Off; 255=100%)
+ */
 void Motor::SetSpeed(uint16_t PWM)
 {
   analogWrite(Motor::PIN_1, PWM);
