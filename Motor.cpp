@@ -1,5 +1,5 @@
 /** @file Motor.cpp
- *  Creates a motor class to interface with a brushless DC motor
+ *  @details Creates a motor class to interface with a brushless DC motor
  *  it works by seting motor pins as inputs and passing a PWM signal to 
  *  one of the pins and sets teh other as high per the motor driver data sheet. 
  *  @author Nolan Clapp
