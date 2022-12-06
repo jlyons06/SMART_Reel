@@ -1,3 +1,10 @@
+/** @file encoder.cpp
+ *  @brief This file contains data relevant to interfacing with a rotary encoder
+ *         content was used taken from Dejan Nedelkovski at  www.HowToMechatronics.com
+ *  @author Original Dejan Nedelkovski
+ *  @date 2022-11-01 Pulled code into .cpp and .h for easier use 
+ *  
+ */
 #include <Arduino.h>
 #include <encoder.h>
 
