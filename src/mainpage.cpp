@@ -5,13 +5,13 @@
  * @mainpage 
  * 
  * @section sec_intro SMART Reel ME 507
- *          by Nolan Clapp, Chloe Chou, Sowmya Ramakrishnan, Joseph Lyons /n
+ *          by Nolan Clapp, Chloe Chou, Sowmya Ramakrishnan, Joseph Lyons <br>
  *          This page acts as documentation for the software side of our project.
  *          Links to other parts of the project are contained in the section below.  
  * @section Links to External Documents
  *          Full Reporrt: [Link] /n
- *          Source Code:[https://github.com/jlyons06/SMART_Reel/tree/main/src] /n
- *          Main GitHub Page: [https://github.com/jlyons06/SMART_Reel.git]     /n 
+ *          Source Code:[https://github.com/jlyons06/SMART_Reel/tree/main/src] <br>
+ *          Main GitHub Page: [https://github.com/jlyons06/SMART_Reel.git]     <br> 
  *          
  * @section sec_lb1 Project Description
  *          This SMART Reel was designed to be used while bass fishing. Bass fishing 
