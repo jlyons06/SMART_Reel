@@ -82,15 +82,23 @@ This primary iteration of our PCB had several issues. A few traces were routed t
 
  
 ### Software Design Overview
-
+The design of our software was relatively straightforward. From our electronic system, specifically the wiring diagram, we were able to create a task diagram that drove how we designed our software. The task diagram we chose to implement is shown below. 
 ![Task Diagram](https://github.com/jlyons06/SMART_Reel/blob/ec3297f52a36d3cf54e479043f5b22853faf3d7b/ReportPics/ActualTD.png)
 Image of our acutal Task Diagram  <br>
 
--Talk about all the tasks <br>
-    ![Task Motor FSM](https://github.com/jlyons06/SMART_Reel/blob/ec3297f52a36d3cf54e479043f5b22853faf3d7b/ReportPics/MotorFSM.png)
-Image of our task motor finite state machine (FSM)  <br>
--Webpage integration <br>
+#### Task IMU
+Task IMU simply calls the imu_get_data() from our IMU driver. The content of IMU.cpp was taken from https://mschoeffler.com/2017/10/05/tutorial-how-to-use-the-gy-521-module-mpu-6050-breakout-board-with-the-arduino-uno/. We used the code from the link above and created .cpp and .h files so that we could run the imu_get_data() method in our Task IMU. Currently, the data that is received from this task is printed on the output terminal. We feel that it would be a nice addition if we were to store the IMU data that is collected in a CSV file and then plot it in Matlab so the user could get a visual representation of how their rod angle changes while they fish. This would be something that we could easily implement in the future. 
 
+#### Task Motor
+Task Motor is how we are interfacing with our motor. This task reads several shares and determines which state it needs to transition to. Each bait state has a different pattern where we pass a sequence of duty cycles to the motor class. The state of the motor is determined by the user input from the webpage. A finite state machine (FSM) of our motor task is shown below. 
+![Task Motor FSM](https://github.com/jlyons06/SMART_Reel/blob/ec3297f52a36d3cf54e479043f5b22853faf3d7b/ReportPics/MotorFSM.png)
+Image of our task motor finite state machine (FSM)  <br>
+
+#### Task Strain
+The strain gauges were interfaced with software via the task_strain task function in main.cpp. The code for this task function was sourced from https://github.com/bogde/HX711. Also sourced from this library were the original HX711.cpp and HX711.h files used to collect and process data from the HX711 Loadcell Amplifier chip. These HX711 files were modified to fit the requirements of our system; we set limits to provide a reasonable upper- and lower- bounding for expected flexure of the rod. In main.cpp, we integrated these bounds into the flags for each bait pattern. When a strain measurement was read outside of our limits, a flag was sent to task_motor, illuminating the blue LED and placing the motor in coast.
+
+#### Task Encoder
+#### Task Webserver
 
 Full Source Code:   [LINK]  <br>
 Documentation:      [LINK] <br>
