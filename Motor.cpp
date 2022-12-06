@@ -18,8 +18,8 @@
  */
 Motor::Motor(void)
 {
-  Motor::PIN_1=12;
-  Motor::PIN_2=14;
+  Motor::PIN_1=12; // motor pin1
+  Motor::PIN_2=14; // motor pin2
   pinMode(Motor::PIN_1, INPUT);
   pinMode(Motor::PIN_2, INPUT);
   
