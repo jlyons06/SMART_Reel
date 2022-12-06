@@ -1,5 +1,10 @@
-/** @file Clapp.cpp
- *  This file contains code relating to HW4, tasks to debounce a button
+/** @file main.cpp
+ *  This file contains code relating all tasks in the SMART Reel project
+ *  @author Clapp
+ *  @author Chow
+ *  @author Lyons
+ *  @author Ramakrishnan
+ *  @date December 12 2022
  */
 
 #include <Arduino.h>
