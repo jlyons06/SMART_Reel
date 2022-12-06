@@ -4,7 +4,7 @@ This files contained in this repository are the software used in the implementat
 the SMART Fishing Reel designed and prototyped in ME507, at Cal Poly - SLO, in Fall 2022.
   
 The team members of this project are Nolan Clapp, Chloe Chou, Sowmya Ramakrishnan, and Joseph Lyons.
-Additional assitiance on this project provided by Prof. J. Ridgely, Cal Poly - SLO Mechanical Engineering.
+Additional assistance on this project provided by Prof. J. Ridgely, Cal Poly - SLO Mechanical Engineering.
 
 
 ### Description 
@@ -42,12 +42,12 @@ Initial Sketch of Mechanical System
 
 The idea behind this mechanical system was to allow for the user to manually reel in if they desire, while still having the capability 
 to reel in using the DC motor. We utilized a gear train of 3 gears in order to keep the gear ratio between the motor and reel as close to 1:1 as possible.
-This is becuase when we initially speced the motor, we planned to have it interface directly with the handle and chose to move to a geared system later. All custom 
+This is because when we initially speced the motor, we planned to have it interface directly with the handle and chose to move to a geared system later. All custom 
 parts such as gears and mounting fixtures will be 3D printed in PLA.
 
 ### Final Mechanical Design and CAD Model
 The CAD model for this project had one main hurdle; the fishing reel CAD model was not readily available online and was very difficult to reproduce due to some organic shapes 
-and contours that were not easily measurable. The way we overcame this was taking key measurements to characterize the design using the center of the handle as the orgin for our model. Once we got these measurements, We created a 2D sketch from the center of the handle with refrence to the edge of the fishing rod. This allowed us to easily use the Solidworks gear toolbox to
+and contours that were not easily measurable. The way we overcame this was taking key measurements to characterize the design using the center of the handle as the origin for our model. Once we got these measurements, We created a 2D sketch from the center of the handle with reference to the edge of the fishing rod. This allowed us to easily use the Solidworks gear toolbox to
 select the correct gears to fit in our design. Below is an image of this characteristic sketch we used. 
 
 ![Gear Fit Sketch](https://github.com/jlyons06/SMART_Reel/blob/c20623955b924674a5ff0d627aa1d01427db8c82/2DGearFit.png)
@@ -78,13 +78,13 @@ Picture of the top of our PCB
 ![PCB Bottom](https://github.com/jlyons06/SMART_Reel/blob/98818e8a439611ab85505778bd46f60cab7026f7/SmartReelV1_bottom.png)
 Picture of the bottom of our PCB 
 
-This primary iteration of our PCB had several issues. A few traces were routed to flash pins on the ESP32, which prevented code from uploading. This was fixed by cutting the traces to those pins and jumping them to the correct pins by soldering on wires. One more significant issue we had was the fact that something in our design fried our ESP32. We could not diagnose the problem and to prevent letting out the magic smoke on anymore of our ESP's, we resorted to using breakout boards. Fornately, after switching to breakout boards, we were able to get all of our electronics up and running. 
+This primary iteration of our PCB had several issues. A few traces were routed to flash pins on the ESP32, which prevented code from uploading. This was fixed by cutting the traces to those pins and jumping them to the correct pins by soldering on wires. One more significant issue we had was the fact that something in our design fried our ESP32. We could not diagnose the problem and to prevent letting out the magic smoke on anymore of our ESP's, we resorted to using breakout boards. Fortunately, after switching to breakout boards, we were able to get all of our electronics up and running. 
 
  
 ### Software Design Overview
 The design of our software was relatively straightforward. From our electronic system, specifically the wiring diagram, we were able to create a task diagram that drove how we designed our software. The task diagram we chose to implement is shown below. 
 ![Task Diagram](https://github.com/jlyons06/SMART_Reel/blob/ec3297f52a36d3cf54e479043f5b22853faf3d7b/ReportPics/ActualTD.png)
-Image of our acutal Task Diagram  <br>
+Image of our actual Task Diagram  <br>
 
 #### Task IMU
 Task IMU simply calls the imu_get_data() from our IMU driver. The content of IMU.cpp was taken from https://mschoeffler.com/2017/10/05/tutorial-how-to-use-the-gy-521-module-mpu-6050-breakout-board-with-the-arduino-uno/. We used the code from the link above and created .cpp and .h files so that we could run the imu_get_data() method in our Task IMU. Currently, the data that is received from this task is printed on the output terminal. We feel that it would be a nice addition if we were to store the IMU data that is collected in a CSV file and then plot it in Matlab so the user could get a visual representation of how their rod angle changes while they fish. This would be something that we could easily implement in the future. 
@@ -105,15 +105,15 @@ Documentation:      [LINK] <br>
 
 
 ### System Performance
-We were able to sucessfully get our system working. To operate the SMART Reel, the user will connect to the ESP32's wifi on their smart phone, verify connection by selecting the "Fish On" button and ensuring the blue LED on the ESP32 turns on. Next, the user would cast their line. Then, the user will select the type of bait they are using by clicking the correct button on the user interface webpage. The SMART reel will then begin reeling in that bait pattern. The user should keep view of the ESP32 because if the blue LED turns on while the reeling is happening, the SMART Reel has determined that a fish could have taken the bait. This determination is made by checking to see if the strain in the rod has increased above a certain threshold (a bend/increase in strain is typically associated with increased tension on the line when a fish takes the bait)
+We were able to successfully get our system working. To operate the SMART Reel, the user will connect to the ESP32's wifi on their smart phone, verify connection by selecting the "Fish On" button and ensuring the blue LED on the ESP32 turns on. Next, the user would cast their line. Then, the user will select the type of bait they are using by clicking the correct button on the user interface webpage. The SMART reel will then begin reeling in that bait pattern. The user should keep view of the ESP32 because if the blue LED turns on while the reeling is happening, the SMART Reel has determined that a fish could have taken the bait. This determination is made by checking to see if the strain in the rod has increased above a certain threshold (a bend/increase in strain is typically associated with increased tension on the line when a fish takes the bait)
 
 <img src= "https://github.com/jlyons06/SMART_Reel/blob/81e06ca9aa2a09d9bc581f14b7b454a0ffec9981/RunningSystem.gif" alt=System Running>
 
 
 ### Future System Modifications 
-Being on the quarter system, we were not able to accomplish everything we wanted to in 10 weeks. With more time, there is several modifications we could make to increase system performance and potentially make this a product that is desireable to people who want to fish but find the process of reeling/learning different bait patterns tedious. The first of these modifications would be to correct the mistakes on our PCB so that the electronics could be contained to a much cleaner package. 
+Being on the quarter system, we were not able to accomplish everything we wanted to in 10 weeks. With more time, there is several modifications we could make to increase system performance and potentially make this a product that is desirable to people who want to fish but find the process of reeling/learning different bait patterns tedious. The first of these modifications would be to correct the mistakes on our PCB so that the electronics could be contained to a much cleaner package. 
 In addition, we were able to collect IMU data, but we did not end up using the data for anything. We think it would be very interesting to take the IMU data and import it into a program like Matlab in order to create a visualization of how the rod angle is changing as the person reels. 
-Something else we would have like to add was the ability to use the encoder on the motor to record new bait patterns. This would be very interesting because with this functionality, the user would be able to create custom bait patterns if they desired. We would implement this by calculating the angular velocity input by the user, and saving how the angular velocity changes with time into an array so that we could feed these velocity values to our motor task to imitate the exact pattern the user inputed. Below is an image of the new task diagram that would need to be implementd to accomodate these changes. 
+Something else we would have like to add was the ability to use the encoder on the motor to record new bait patterns. This would be very interesting because with this functionality, the user would be able to create custom bait patterns if they desired. We would implement this by calculating the angular velocity input by the user, and saving how the angular velocity changes with time into an array so that we could feed these velocity values to our motor task to imitate the exact pattern the user input. Below is an image of the new task diagram that would need to be implemented to accommodate these changes. 
 
 ![Ideal Task Diagram](https://github.com/jlyons06/SMART_Reel/blob/ec3297f52a36d3cf54e479043f5b22853faf3d7b/ReportPics/IdealTD.png)
 Image of our proposed updated Task Diagram  <br>
