@@ -15,12 +15,18 @@
 #include "taskshare.h"
 
 // A share which holds the flag to begin the pattern of the minnow bait
+/** @brief Boolean variable for the minnow bait pattern 
+*/
 extern Share<bool> minnow_flag;
 
 // A share which holds the flag to begin the pattern of the crawdad bait
+/** @brief Boolean variable for the crawdad bait pattern 
+*/
 extern Share<bool> crawdad_flag;
 
 // A share which holds the flag to begin the pattern of the worm bait
+/** @brief Boolean variable for the topwater bait pattern 
+*/
 extern Share<bool> topwater_flag;
 
 #endif // _SHARES_H_
