@@ -1,8 +1,9 @@
 /** @file IMU_R.h
- *  This helps print an array
- *  @author Nolan Clapp
- *  @author JR Ridgely, added more documentation and functionality
- *  @date 2022-Oct-26 Original file by Clapp
+ *  @brief Headder file for IMU
+    @author Clapp
+    @author Schoeffler
+ *  @date 2017 Original Schoeffler 
+ *  @date 2022-11-01 Pulled code into .cpp and .h for easier use Clapp
  */
 
 #ifndef IMU_R_h
@@ -10,11 +11,14 @@
 
 #include <Arduino.h> 
 #include "PrintStream.h"
-/** This class operates several print array funcitons with different inputs
+
+
+
+/** @brief Function to set up IMU
  */
-
-
 void IMU_setup();
+/** @brief Function to get IMU data
+ */
 void IMU_get_data();
 
 
