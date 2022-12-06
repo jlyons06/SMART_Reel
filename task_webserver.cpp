@@ -1,15 +1,17 @@
-/** @file webpage.cpp
- *  This program runs a very simple web server, demonstrating how to serve a
- *  static web page and how to use a web link to get the microcontroller to do
- *  something simple.
+/** @file task_webserver.cpp
+ *  This program runs the webserver for the SMART Reel, displaying several
+ *  bait patterns to be selected by the user.
  *
  *  Based on an examples by A. Sinha at
  *  @c https://github.com/hippyaki/WebServers-on-ESP32-Codes
  *
  *  @author A. Sinha
  *  @author JR Ridgely
+ *  @author JR Lyons
  *  @date   2022-Mar-28 Original stuff by Sinha
  *  @date   2022-Nov-04 Modified for ME507 use by Ridgely
+ *  @date   2022-Nov-30 Modified by Lyons for specific considerations of the
+ *          SMART Reel
  *  @copyright 2022 by the authors, released under the MIT License.
  */
 
@@ -43,15 +45,9 @@ IPAddress subnet(255, 255, 255, 0); // Network mask; just leave this as is
 /// The pin connected to an LED controlled through the Web interface
 const uint8_t ledPin = 2;
 
-
 /** @brief   The web server object for this project.
  *  @details This server is responsible for responding to HTTP requests from
  *           other computers, replying with useful information.
- *
- *           It's kind of clumsy to have this object as a global, but that's
- *           the way Arduino keeps things simple to program, without the user
- *           having to write custom classes or other intermediate-level
- *           structures.
  */
 WebServer server(80);
 
@@ -141,9 +137,9 @@ void handle_NotFound(void)
 }
 
 /** @brief   Toggle blue LED when called by the web server.
- *  @details For testing purposes, this function turns the little blue LED on a
- *           38-pin ESP32 board on and off. It is called when someone enters
- *           @c http://server.address/toggle as the web address request from a
+ *  @details This function exists as a testing task to verify connectivity
+ *           by turning a blue LED on and off.
+ *           @c http://server.address/fish_on as the web address request from a
  *           browser.
  */
 void handle_Fish_On(void)
@@ -166,19 +162,15 @@ void handle_Fish_On(void)
 
 /** @brief   Spin motor in pattern 1 (continuous) when called by the web server.
  *  @details Pattern 1 of the motor is to imitate a minnow bait, where the bait
- *           "swims" in a continuous motion, shows up when
+ *           "swims" in a continuous, slow motion.
  *           @c http://server.address/minnow_bait as the web address request from a
  *           browser.
  */
-
 void handle_Minnow_Bait(void)
 {
     // This variable must be declared static so that its value isn't forgotten
     // each time this function runs.
-    // Share<bool> minnow_flag (false);
     minnow_flag.put(true);
-    // static bool state = false;
-    // state = !state;
 
     String minnow_page = "<!DOCTYPE html> <html> <head>\n";
     minnow_page += "<meta http-equiv=\"refresh\" content=\"1; url='/'\" />\n";
@@ -190,18 +182,15 @@ void handle_Minnow_Bait(void)
 
 /** @brief   Spin motor in pattern 2 when called by the web server.
  *  @details Pattern 2 of the motor is to imitate a crawdad bait, where the bait
- *           jerks and holds in a repeating pattern.
+ *           cycles between quick jerks, slow walks, and pauses in motion.
  *           @c http://server.address/crawdad_bait as the web address request from a
  *           browser.
  */
-
 void handle_Crawdad_Bait(void)
 {
     // This variable must be declared static so that its value isn't forgotten
     // each time this function runs.
     crawdad_flag.put(true);
-    // static bool state = false;
-    // state = !state;
 
     String crawdad_page = "<!DOCTYPE html> <html> <head>\n";
     crawdad_page += "<meta http-equiv=\"refresh\" content=\"1; url='/'\" />\n";
@@ -212,19 +201,17 @@ void handle_Crawdad_Bait(void)
 }
 
 /** @brief   Spin motor in pattern 3 when called by the web server.
- *  @details Pattern 3 of the motor is to imitate a worm bait, where the bait
- *           moves and pauses in a repeating pattern.
- *           @c http://server.address/worm_bait as the web address request from a
+ *  @details Pattern 3 of the motor is to imitate a topwater bait, where the bait
+ *           cycles between quick and slow continuous motion, to imitate a frog or
+ *           duck moving on the top surface of the water.
+ *           @c http://server.address/top_water_bait as the web address request from a
  *           browser.
  */
-
 void handle_Top_Water_Bait(void)
 {
     // This variable must be declared static so that its value isn't forgotten
     // each time this function runs.
     topwater_flag.put(true);
-    // static bool state = false;
-    // state = !state;
 
     String topwater_page = "<!DOCTYPE html> <html> <head>\n";
     topwater_page += "<meta http-equiv=\"refresh\" content=\"1; url='/'\" />\n";
@@ -233,7 +220,6 @@ void handle_Top_Water_Bait(void)
 
     server.send(200, "text/html", topwater_page);
 }
-
 
 /** @brief   Task which sets up and runs a web server.
  *  @details After setup, function @c handleClient() must be run periodically

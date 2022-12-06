@@ -1,10 +1,13 @@
 /** @file task_webserver.h
- *  This program is the header for the WiFi communication webpage
- * 
+ *  This program is the header for the SMART Reel webpage.
+ *
  *  @author A. Sinha
  *  @author JR Ridgely
+ *  @author JR Lyons
  *  @date   2022-Mar-28 Original stuff by Sinha
  *  @date   2022-Nov-04 Modified for ME507 use by Ridgely
+ *  @date   2022-Nov-30 Modified for SMART Reel specific use
+ *          by Lyons.
  *  @copyright 2022 by the authors, released under the MIT License.
  */
 
@@ -15,7 +18,6 @@
 #include <WiFi.h>
 #include <WebServer.h>
 #include <shares.h>
-
 
 void setup_wifi(void);
 
