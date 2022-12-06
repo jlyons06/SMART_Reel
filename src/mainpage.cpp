@@ -5,7 +5,7 @@
  * @mainpage 
  * 
  * @section sec_intro SMART Reel ME 507
- *          by Nolan Clapp, Chloe Chou, Sowmya Ramakrishnan, Joseph Lyons <br>
+ *          Nolan Clapp, Chloe Chou, Sowmya Ramakrishnan, Joseph Lyons <br>
  *          This page acts as documentation for the software side of our project.
  *          Links to other parts of the project are contained in the section below.  
  * @section sec_lb1 External Documents
