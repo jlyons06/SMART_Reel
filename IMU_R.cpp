@@ -1,5 +1,5 @@
-/** @file IMU_R
- *  Prints an array of data
+/** @file IMU_R.cpp
+ *  @brief This file contains data relevant to interfacing with the MPU 6050 module
  *  @author Michael Schoeffler 
  *  @author Nolan Clapp
  *  @date 2017 Original Schoeffler 
