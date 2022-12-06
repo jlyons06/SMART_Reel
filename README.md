@@ -100,7 +100,7 @@ The strain gauges were interfaced with software via the task_strain task functio
 #### Task Encoder
 #### Task Webserver
 
-Full Source Code:   [LINK]  <br>
+Full Source Code:   [https://github.com/jlyons06/SMART_Reel/tree/main/src]  <br>
 Documentation:      [LINK] <br>
 
 
