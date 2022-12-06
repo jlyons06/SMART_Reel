@@ -9,7 +9,7 @@
  *          This page acts as documentation for the software side of our project.
  *          Links to other parts of the project are contained in the section below.  
  * @section Links to External Documents
- *          Full Reporrt: [Link] /n
+ *          Full Reporrt: [Link] <br>
  *          Source Code:[https://github.com/jlyons06/SMART_Reel/tree/main/src] <br>
  *          Main GitHub Page: [https://github.com/jlyons06/SMART_Reel.git]     <br> 
  *          
