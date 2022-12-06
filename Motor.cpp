@@ -11,8 +11,6 @@
 #include <PrintStream.h>
 #include "IMU_R.h"
 #include "Motor.h"
-// (c) Michael Schoeffler 2017, http://www.mschoeffler.de
-
 #include "Wire.h" // This library allows you to communicate with I2C devices.
 /** @brief   Constructor which creates a motor object.
  */
