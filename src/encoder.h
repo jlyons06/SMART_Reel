@@ -1,3 +1,8 @@
+/** @file encoder.h
+ *  @brief Headder file for encoder
+    @author Chow 
+ *  @date 2022-11-01 Pulled code into .cpp and .h for easier use 
+ */
 #include <Arduino.h>
 class encoder
 {
