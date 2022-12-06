@@ -18,7 +18,11 @@
  */
 Motor::Motor(void)
 {
+  /** @brief   First Motor Pin
+ */
   Motor::PIN_1=12; // motor pin1
+  /** @brief   Second Motor Pin
+ */
   Motor::PIN_2=14; // motor pin2
   pinMode(Motor::PIN_1, INPUT);
   pinMode(Motor::PIN_2, INPUT);
