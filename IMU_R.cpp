@@ -1,5 +1,6 @@
 /** @file IMU_R.cpp
  *  @brief This file contains data relevant to interfacing with the MPU 6050 module
+ *         most content pulled from https://mschoeffler.com/2017/10/05/tutorial-how-to-use-the-gy-521-module-mpu-6050-breakout-board-with-the-arduino-uno/
  *  @author Michael Schoeffler 
  *  @author Nolan Clapp
  *  @date 2017 Original Schoeffler 
