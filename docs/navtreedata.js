@@ -28,7 +28,6 @@ var NAVTREE =
     [ "SMART Reel ME 507", "index.html#sec_intro", null ],
     [ "External Documents", "index.html#sec_lb1", null ],
     [ "Project Description", "index.html#sec_lb2", null ],
-    [ "SMART_Reel", "md_src__r_e_a_d_m_e.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -43,8 +42,7 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ],
-        [ "Macros", "globals_defs.html", null ]
+        [ "Variables", "globals_vars.html", null ]
       ] ]
     ] ]
   ] ]
@@ -52,7 +50,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_i_m_u___r_8cpp.html"
+"_h_x711_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

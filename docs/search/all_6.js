@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['ledpin_0',['ledPin',['../task__webserver_8cpp.html#a59cd9f4f39202cbaad65ca3e0c2a5a60',1,'ledPin():&#160;task_webserver.cpp'],['../webpage_8cpp.html#a59cd9f4f39202cbaad65ca3e0c2a5a60',1,'ledPin():&#160;webpage.cpp']]],
-  ['loop_1',['loop',['../main_8cpp.html#a0b33edabd7f1c4e4a0bf32c67269be2f',1,'loop(void):&#160;main.cpp'],['../webpage_8cpp.html#afe461d27b9c48d5921c00d521181f12f',1,'loop():&#160;webpage.cpp']]]
+  ['main_2ecpp_0',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['mainpage_2ecpp_1',['mainpage.cpp',['../mainpage_8cpp.html',1,'']]],
+  ['minnow_5fflag_2',['minnow_flag',['../shares_8h.html#ab8c9b8efbe9f1051af4a7010977f0533',1,'minnow_flag():&#160;shares.h'],['../main_8cpp.html#a36500600803425b610e4ebcf6ce8fccc',1,'minnow_flag(&quot;Minnow&quot;):&#160;main.cpp']]],
+  ['motor_3',['Motor',['../class_motor.html',1,'Motor'],['../class_motor.html#a9a916a14861b4c5b5ee87dde7020a09d',1,'Motor::Motor()']]],
+  ['motor_2ecpp_4',['Motor.cpp',['../_motor_8cpp.html',1,'']]],
+  ['motor_2eh_5',['Motor.h',['../_motor_8h.html',1,'']]]
 ];

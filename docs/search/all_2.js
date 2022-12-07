@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fast_5fpin_0',['FAST_PIN',['../webpage_8cpp.html#aa2a5c774150998c42b693fd2fd4c1e0b',1,'webpage.cpp']]]
+  ['getcurrent_0',['getcurrent',['../class_motor.html#a7e2ce4bd52695caf74c7e226981c42c2',1,'Motor']]]
 ];
