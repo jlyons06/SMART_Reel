@@ -9,7 +9,7 @@
  *          This page acts as documentation for the software side of our project.
  *          Links to other parts of the project are contained in the section below.  
  * @section sec_lb1 External Documents
- *          Full Reporrt: [https://cpslo-my.sharepoint.com/:w:/g/personal/jlyons06_calpoly_edu/ETmEV_7q49ZDkLK7QOFFlEIB0l7RPalyzzMyEHqu3zkftg?e=ERx95o] <br>
+ *          Full Report: [https://cpslo-my.sharepoint.com/:w:/g/personal/jlyons06_calpoly_edu/ETmEV_7q49ZDkLK7QOFFlEIB0l7RPalyzzMyEHqu3zkftg?e=ERx95o] <br>
  *          Source Code:[https://github.com/jlyons06/SMART_Reel/tree/main/src] <br>
  *          Main GitHub Page: [https://github.com/jlyons06/SMART_Reel.git]     <br> 
  *          
