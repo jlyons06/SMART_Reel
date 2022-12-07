@@ -1,5 +1,5 @@
 /** @file HX711.cpp
- *  This file is is the software implementation of the strain gauges
+ *  @brief File is is the software implementation of the strain gauges
  *  used via the HX711 chip.
  *  @author Bogdan Necula, original file
  *  @author JR Lyons, modifications for use in SMART Reel
